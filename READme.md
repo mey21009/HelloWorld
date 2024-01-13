@@ -3,11 +3,8 @@
 
 This is Hello World in Python.The purpose of this project was to explore different IDEs and languages
 
-{Describe your purpose for creating this software.}
 
-{Provide a link to your YouTube demonstration.  It should be a one minute demo of the software running and a walkthrough of the code.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+https://www.youtube.com/watch?v=niwvQhtJ7c0&ab_channel=ShaylaM
 
 # Development Environment
 
