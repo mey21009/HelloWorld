@@ -82,26 +82,27 @@ public class Main {
         movies.add(new Movie("Zootopia", Arrays.asList("Animation”, “Adventure” ,“Comedy")));
 
 
-        // Prompt user to input interests
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your interests (separated by commas):");
-        String input = scanner.nextLine();
-        List<String> interests = Arrays.asList(input.split("\\s*,\\s*"));
+        try (// Prompt user to input interests
+        Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter your interests (separated by commas):");
+            String input = scanner.nextLine();
+            List<String> interests = Arrays.asList(input.split("\\s*,\\s*"));
 
-        // Create user object with interests
-        User user = new User(interests);
+            // Create user object with interests
+            User user = new User(interests);
 
-        // Create recommendation system and get recommended movies
-        MovieRecommendationSystem recommendationSystem = new MovieRecommendationSystem(movies);
-        List<Movie> recommendedMovies = recommendationSystem.recommendMovies(user);
+            // Create recommendation system and get recommended movies
+            MovieRecommendationSystem recommendationSystem = new MovieRecommendationSystem(movies);
+            List<Movie> recommendedMovies = recommendationSystem.recommendMovies(user);
 
-        // Display recommended movies
-        if (recommendedMovies.isEmpty()) {
-            System.out.println("Sorry, no movies found matching your interests.");
-        } else {
-            System.out.println("Recommended movies:");
-            for (Movie movie : recommendedMovies) {
-                System.out.println(movie.getTitle());
+            // Display recommended movies
+            if (recommendedMovies.isEmpty()) {
+                System.out.println("Sorry, no movies found matching your interests.");
+            } else {
+                System.out.println("Recommended movies:");
+                for (Movie movie : recommendedMovies) {
+                    System.out.println(movie.getTitle());
+                }
             }
         }
     }
